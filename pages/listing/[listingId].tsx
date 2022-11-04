@@ -202,8 +202,8 @@ const Listing = () => {
                         <p className='font-bold'>Offers: </p>
                         <p className='font-bold'>{offers.length > 0 ? offers.length : 0}</p>
                     
-                        {offers.map((offer) => {
-                        return (<>
+                        {offers.map((offer) => (
+                        <>
                           <p className='flex items-center ml-5 text-sm italic'>
                             <UserCircleIcon className='h-3 mr-2'/>
                             {offer.offeror.slice(0, 5) + 
@@ -240,8 +240,8 @@ const Listing = () => {
                                 </button>
                             )}
                           </div>
-                        </>)
-                       })}
+                        </>
+                        ))}
                     </div>
                 ) : "" }
 
