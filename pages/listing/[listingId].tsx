@@ -196,13 +196,14 @@ const Listing = () => {
                     <button onClick={buyNft} className='col-start-2 mt-2 bg-blue-600 font-bold text-white rounded-full w-44 py-4 px-10'>Buy Now</button>
                 </div>
 
-                {listing.type === ListingType.Direct && offers && (
+                {(listing.type === ListingType.Direct && offers)  ? (
+
                     <div className='grid grid-cols-2 gap-y-2'>
                         <p className='font-bold'>Offers: </p>
                         <p className='font-bold'>{offers.length > 0 ? offers.length : 0}</p>
                     
-                      {offers.map((offer) => {
-                        <>
+                        {offers.map((offer) => {
+                        return (<>
                           <p className='flex items-center ml-5 text-sm italic'>
                             <UserCircleIcon className='h-3 mr-2'/>
                             {offer.offeror.slice(0, 5) + 
@@ -239,10 +240,10 @@ const Listing = () => {
                                 </button>
                             )}
                           </div>
-                        </>
+                        </>)
                        })}
                     </div>
-                )}
+                ) : "" }
 
                 <div className='grid grid-cols-2 space-y-2 items-start justify-end'>
                     <hr className='col-span-2'/>
