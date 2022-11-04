@@ -112,7 +112,8 @@ function create({}: Props) {
         <div className='flex overflow-x-scroll space-x-2 p-4'>
           {ownedNFTs?.data?.map((nft) => {
             return(
-              <div className={`flex flex-col space-y-3 card min-w-fit border-2 bg-gray-100 ${nft.metadata.id === selectedNFT?.metadata.id ? "border-black" : "border-transparent"}`} key={nft.metadata.id}
+              <div className={`flex flex-col space-y-3 card min-w-fit border-2 bg-gray-100 ${nft.metadata.id === selectedNFT?.metadata.id ? "border-black" : "border-transparent"}`} 
+                  key={nft.metadata.id}
               onClick={() => setSelectedNFT(nft)}
               >
                 <MediaRenderer className='h-48 rounded-lg' src={nft.metadata.image} />
